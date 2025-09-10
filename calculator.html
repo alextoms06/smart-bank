@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Cashify Calculator</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <style>
+    body { font-family: Arial, sans-serif; margin:0; background:#f4f6f8; }
+    header { background:linear-gradient(90deg,#0077b6,#00b4d8); color:white; padding:15px 25px; display:flex; justify-content:space-between; align-items:center; }
+    nav a { margin-left:20px; color:white; text-decoration:none; font-weight:bold; }
+    nav a:hover { text-decoration:underline; }
+    main { padding:25px; }
+    .card { background:white; border-radius:12px; padding:20px; box-shadow:0 2px 6px rgba(0,0,0,0.1); max-width:400px; margin:auto; }
+    input,button { padding:10px; margin:5px; width:calc(50% - 12px); font-size:16px; }
+    button { background:#0077b6; color:white; border:none; cursor:pointer; border-radius:8px; }
+    button:hover { background:#005f86; }
+    #result { font-weight:bold; margin-top:15px; }
+    footer { text-align:center; padding:15px; background:#0077b6; color:white; position:fixed; bottom:0; width:100%; }
+  </style>
+</head>
+<body>
+  <header>
+    <h1>📊 Cashify Calculator</h1>
+    <nav>
+      <a href="home.html">🏠 Home</a>
+      <a href="calculator.html">📊 Calculator</a>
+      <a href="insights.html">🤖 AI Insights</a>
+      <a href="news.html">📰 World News</a>
+      <a href="index.html">🚪 Logout</a>
+    </nav>
+  </header>
+
+  <main>
+    <div class="card">
+      <h2>Simple Calculator</h2>
+      <input type="number" id="num1" placeholder="Enter first number">
+      <input type="number" id="num2" placeholder="Enter second number">
+      <div>
+        <button onclick="calc('+')">➕</button>
+        <button onclick="calc('-')">➖</button>
+        <button onclick="calc('*')">✖️</button>
+        <button onclick="calc('/')">➗</button>
+      </div>
+      <p id="result">Result: -</p>
+    </div>
+  </main>
+
+  <footer>© 2025 Cashify Bank</footer>
+
+  <script>
+    function calc(op) {
+      const a = parseFloat(document.getElementById("num1").value);
+      const b = parseFloat(document.getElementById("num2").value);
+      if (isNaN(a) || isNaN(b)) {
+        document.getElementById("result").innerText = "Result: Enter numbers!";
+        return;
+      }
+      let result;
+      switch(op) {
+        case '+': result = a+b; break;
+        case '-': result = a-b; break;
+        case '*': result = a*b; break;
+        case '/': result = b!==0? a/b : "∞"; break;
+      }
+      document.getElementById("result").innerText = "Result: " + result;
+    }
+  </script>
+</body>
+</html>
