@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>AI Insights - Cashify</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <style>
+    body { font-family:Arial,sans-serif; margin:0; background:#f4f6f8; }
+    header { background:linear-gradient(90deg,#0077b6,#00b4d8); color:white; padding:15px 25px; display:flex; justify-content:space-between; align-items:center; }
+    nav a { margin-left:20px; color:white; text-decoration:none; font-weight:bold; }
+    nav a:hover { text-decoration:underline; }
+    main { padding:25px; }
+    .card { background:white; border-radius:12px; padding:20px; margin-bottom:20px; box-shadow:0 2px 6px rgba(0,0,0,0.1); }
+    textarea { width:100%; height:120px; padding:10px; margin-top:10px; font-size:14px; border-radius:8px; border:1px solid #ccc; }
+    button { margin-top:10px; padding:10px 20px; background:#0077b6; color:white; border:none; border-radius:8px; cursor:pointer; }
+    button:hover { background:#005f86; }
+    #output { margin-top:15px; font-weight:bold; }
+    footer { text-align:center; padding:15px; background:#0077b6; color:white; position:fixed; bottom:0; width:100%; }
+  </style>
+</head>
+<body>
+  <header>
+    <h1>🤖 AI Insights</h1>
+    <nav>
+      <a href="home.html">🏠 Home</a>
+      <a href="calculator.html">📊 Calculator</a>
+      <a href="insights.html">🤖 AI Insights</a>
+      <a href="news.html">📰 World News</a>
+      <a href="index.html">🚪 Logout</a>
+    </nav>
+  </header>
+
+  <main>
+    <div class="card">
+      <h2>Get Financial Insights</h2>
+      <textarea id="question" placeholder="Ask me anything about finance..."></textarea>
+      <button onclick="getInsight()">Ask AI</button>
+      <div id="output">Waiting for your question...</div>
+    </div>
+  </main>
+
+  <footer>© 2025 Cashify Bank</footer>
+
+  <script>
+    function getInsight() {
+      const q = document.getElementById("question").value.trim();
+      if(!q) {
+        document.getElementById("output").innerText = "Please enter a question.";
+        return;
+      }
+      // Fake AI reply for now
+      document.getElementById("output").innerText = "💡 Insight: " + 
+        "Based on your query '" + q + "', saving regularly and diversifying investments is recommended.";
+    }
+  </script>
+</body>
+</html>
