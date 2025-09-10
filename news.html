@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>World News - Cashify</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <style>
+    body { font-family:Arial,sans-serif; margin:0; background:#f4f6f8; }
+    header { background:linear-gradient(90deg,#0077b6,#00b4d8); color:white; padding:15px 25px; display:flex; justify-content:space-between; align-items:center; }
+    nav a { margin-left:20px; color:white; text-decoration:none; font-weight:bold; }
+    nav a:hover { text-decoration:underline; }
+    main { padding:25px; }
+    .card { background:white; border-radius:12px; padding:20px; margin-bottom:20px; box-shadow:0 2px 6px rgba(0,0,0,0.1); }
+    h2 { color:#0077b6; }
+    ul { padding-left:20px; }
+    footer { text-align:center; padding:15px; background:#0077b6; color:white; position:fixed; bottom:0; width:100%; }
+  </style>
+</head>
+<body>
+  <header>
+    <h1>📰 World News</h1>
+    <nav>
+      <a href="home.html">🏠 Home</a>
+      <a href="calculator.html">📊 Calculator</a>
+      <a href="insights.html">🤖 AI Insights</a>
+      <a href="news.html">📰 World News</a>
+      <a href="index.html">🚪 Logout</a>
+    </nav>
+  </header>
+
+  <main>
+    <div class="card">
+      <h2>Top Global Headlines 🌍</h2>
+      <ul id="newsList">
+        <li>Loading news...</li>
+      </ul>
+    </div>
+  </main>
+
+  <footer>© 2025 Cashify Bank</footer>
+
+  <script>
+    async function loadNews() {
+      const headlines = [
+        "Global stock markets rally amid economic optimism",
+        "Breakthrough in renewable energy storage announced",
+        "Tech giants report record profits for Q3",
+        "Central banks hint at interest rate changes",
+        "AI adoption reshaping financial services worldwide"
+      ];
+      const list = document.getElementById("newsList");
+      list.innerHTML = "";
+      headlines.forEach(n => {
+        const li = document.createElement("li");
+        li.textContent = n;
+        list.appendChild(li);
+      });
+    }
+    loadNews();
+  </script>
+</body>
+</html>
